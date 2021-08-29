@@ -1,0 +1,19 @@
+<div class="search-wrap">
+    <div class="neu-input" role="search">
+        <input placeholder="Search with userId" class="neu-input__field" [(ngModel)]="searchD" type="text"
+            name="uniqueInputName" aria-disabled="false" aria-label="search" id="uniqueSearchID" />
+        <button>
+            <span><i *ngIf="!searchD">search</i></span>
+            <i *ngIf="searchD" (click)="searchD='';setFocus()" class="material-icons more-icon">close</i>
+        </button>
+    </div>
+</div>
+
+  <div *ngFor="let item of postData  |filter: searchD :'userId';let index =index">
+    <p>
+        userId : {{item.userId}}
+      </p>
+      <p>
+       Title: {{item.title}}
+      </p>
+  </div>

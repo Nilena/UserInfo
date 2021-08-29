@@ -8,7 +8,6 @@ export class UserDetailService {
   constructor() { }
   userData: any = {};
   public setUserInfo(userInfo: {}) {
-    debugger
     this.userData = userInfo;
     this.saveToLocalStorage('profile', JSON.stringify(userInfo));
   }

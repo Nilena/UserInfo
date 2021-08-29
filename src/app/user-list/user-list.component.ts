@@ -19,12 +19,10 @@ export class UserListComponent implements OnInit {
     let endpoint ='https://jsonplaceholder.typicode.com/users';
     this.http.get<any>(endpoint).subscribe((response) => {
       this.userList = response;
-      console.log(response)
     })
   }
 
   showInfo(info){
-    console.log(info)
     this.userDetailService.setUserInfo(info);
     this.router.navigate(['/user-details']);
   }

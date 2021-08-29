@@ -23,6 +23,6 @@ export class UserDetailsComponent implements OnInit {
   }
 
   posts(){
-    console.log('post')
+    this.router.navigate(['/post/list']);
   }
 }
