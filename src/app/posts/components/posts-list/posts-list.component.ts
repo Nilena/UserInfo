@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts-list',
@@ -14,7 +15,8 @@ export class PostsListComponent implements OnInit {
   control = new FormControl();
   postDataFiltered: Observable<string[]>;
   searchD:any='';
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,
+    private router:Router) { }
 
   ngOnInit(): void {
     let endpoint ='https://jsonplaceholder.typicode.com/posts';
@@ -35,5 +37,9 @@ export class PostsListComponent implements OnInit {
 
   private _normalizeValue(value: string): string {
     return value.toLowerCase().replace(/\s/g, '');
+  }
+
+  showDetails(item){
+    this.router.navigate(['/details/'+item.id])
   }
 }

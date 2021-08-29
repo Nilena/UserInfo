@@ -14,7 +14,7 @@ export class FilterPipe implements PipeTransform {
    * Transform
    *
    * @param {any[]} items
-   * @param {NumberFormatStyle} searchText
+   * @param {Number} searchText
    * @returns {any[]}
    */
   transform(array: any[], searchText: number, label1?: any): any[] {
