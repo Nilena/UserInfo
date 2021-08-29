@@ -21,7 +21,6 @@ export class PostsListComponent implements OnInit {
     let endpoint = 'https://jsonplaceholder.typicode.com/posts';
     this.http.get<any>(endpoint).subscribe((response) => {
       this.postData = response;
-      console.log(this.postData)
     })
   }
 

@@ -17,13 +17,10 @@ export class PostDetailsComponent implements OnInit {
      }
 
   ngOnInit(): void {
-    debugger
     this.value = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.value)
     let endpoint = 'https://jsonplaceholder.typicode.com/posts/'+this.value;
     this.http.get<any>(endpoint).subscribe((response) => {
       this.postDetails = response as postDetailsData ;
-      console.log(this.postDetails)
     })
   }
 

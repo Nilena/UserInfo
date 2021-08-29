@@ -31,23 +31,12 @@ export class UserAlbumsComponent implements OnInit {
   getAlbumList() {
     let endpoint = 'https://jsonplaceholder.typicode.com/photos';
     this.http.get<any>(endpoint).subscribe((response) => {
-      console.log(response);
       this.albumList = response;
     })
   }
 
-  getServerData(event) {
-    console.log(event)
-
-  }
-
-  pageChange(pageNumber: number) {
-    console.log(pageNumber)
-  }
-
-
   expandedImage(value) {
-    this.expandeSrc = value;
+   this.expandeSrc = value;
   }
   imagePopup() {
     this.expandeSrc = null;
