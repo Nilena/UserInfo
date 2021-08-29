@@ -18,6 +18,7 @@ export class FilterPipe implements PipeTransform {
    * @returns {any[]}
    */
   transform(array: any[], searchText: number, label1?: any): any[] {
+    let newArr =[];
     if (!array) {
       return [];
     }
@@ -26,13 +27,12 @@ export class FilterPipe implements PipeTransform {
     }
     searchText = Number(searchText)
     if (label1) {
-      // for(let i =0;i<array.length;i++){
-      //   console.log()
-      //   }\
-      console.log(label1)
-      return array.filter(item => 
-        (label1 ? ((item[label1]).includes(searchText)) : '') );
-      // (label1? ((item[label1]).includes(searchText)):'') )
+      for(let i =0;i<array.length;i++){
+        if(array[i].userId==searchText){
+           newArr.push(array[i])
+          }
+        }
+        return newArr;
       }
     else {
       return array.filter(item => (item).includes(searchText))
