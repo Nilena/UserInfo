@@ -1,10 +1,13 @@
-    <div>
+    <div >
         <ng-container *ngFor="let link of albumList| paginate: { itemsPerPage: 10, currentPage: p }; let i=index">
                 <img [src]="link.thumbnailUrl" [alt]="link.thumbnailUrl" (click)="expandedImage(link.url)">
         </ng-container>
     </div>
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
-<div *ngIf="expandeSrc">
-    <img [src]="expandeSrc">
+<div class="wraper" *ngIf="expandeSrc">
+    <div class="wraperData">
+        <span (click)="imagePopup()">X</span>
+        <img [src]="expandeSrc">
+    </div>
 </div>

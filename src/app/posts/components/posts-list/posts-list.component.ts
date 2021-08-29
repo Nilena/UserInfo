@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {startWith, map} from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { startWith, map } from 'rxjs/operators';
 import { Route, Router } from '@angular/router';
 
 @Component({
@@ -11,35 +11,22 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./posts-list.component.css']
 })
 export class PostsListComponent implements OnInit {
-  postData:any =[];
+  postData: any = [];
   control = new FormControl();
-  postDataFiltered: Observable<string[]>;
-  searchD:any='';
-  constructor(private http:HttpClient,
-    private router:Router) { }
+  searchD: any = '';
+  constructor(private http: HttpClient,
+    private router: Router) { }
 
   ngOnInit(): void {
-    let endpoint ='https://jsonplaceholder.typicode.com/posts';
+    let endpoint = 'https://jsonplaceholder.typicode.com/posts';
     this.http.get<any>(endpoint).subscribe((response) => {
       this.postData = response;
       console.log(this.postData)
     })
-    this.postDataFiltered = this.control.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
-  }
-  private _filter(value: string): string[] {
-    debugger
-    const filterValue = this._normalizeValue(value);
-    return this.postData.filter(street => street.includes(filterValue));
   }
 
-  private _normalizeValue(value: string): string {
-    return value.toLowerCase().replace(/\s/g, '');
-  }
 
-  showDetails(item){
-    this.router.navigate(['/details/'+item.id])
+  showDetails(item) {
+    this.router.navigate(['post/details/' + item.id])
   }
 }

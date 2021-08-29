@@ -1,0 +1,16 @@
+.userList {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  border: 2px solid #0006;
+}
+button {
+  background-color: #000000eb;
+  color: #fff;
+  border-radius: 10px;
+  /* padding: 0 28px; */
+  /* margin-right: 10px; */
+  width: 80px;
+}

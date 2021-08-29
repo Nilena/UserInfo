@@ -49,5 +49,7 @@ export class UserAlbumsComponent implements OnInit {
   expandedImage(value) {
     this.expandeSrc = value;
   }
-
+  imagePopup() {
+    this.expandeSrc = null;
+  }
 }
