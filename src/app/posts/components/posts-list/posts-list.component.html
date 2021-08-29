@@ -1,3 +1,4 @@
+<div class="formWrap">
 <div class="search-wrap">
     <div class="neu-input" role="search">
         <input placeholder="Search with userId" class="neu-input__field" [(ngModel)]="searchD" type="text"
@@ -8,7 +9,7 @@
         </button>
     </div>
 </div>
-
+<div class="tableData">
   <div *ngFor="let item of postData  |filter: searchD :'userId';let index =index">
     <p>
         userId : {{item.userId}}
@@ -17,3 +18,5 @@
        Title: {{item.title}}
       </p>
   </div>
+</div>
+</div>

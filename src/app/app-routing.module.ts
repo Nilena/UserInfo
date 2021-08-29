@@ -5,8 +5,9 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
-
-  
+  {
+		path : '', redirectTo: 'user-list', pathMatch : 'full'
+	},
   {
     path: '', component: LayoutComponent,
     children: [

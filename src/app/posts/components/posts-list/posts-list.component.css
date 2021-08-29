@@ -1,0 +1,25 @@
+.formWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #000;
+  padding: 30px;
+  width: 550px;
+  /* height: 500px; */
+  /* overflow: auto; */
+}
+.tableData {
+  height: 500px;
+  overflow: auto;
+}
+.neu-input__field {
+  border: 1px solid #000;
+  height: 10px;
+  width: 84%;
+  padding: 10px;
+  border-radius: 5px;
+}
+button {
+  height: 30px;
+}
